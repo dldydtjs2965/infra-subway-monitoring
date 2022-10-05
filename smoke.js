@@ -3,8 +3,6 @@ import http from 'k6/http';
 import { check, group, sleep, fail } from 'k6';
 
 export let options = {
-    vus: 1, // 1 user looping for 1 minute
-    duration: '10s',
     stages: [
         { duration: '1m', target: 500 }, // simulate ramp-up of traffic from 1 to 100 users over 5 minutes.
         { duration: '2m', target: 500 }, // stay at 100 users for 10 minutes
